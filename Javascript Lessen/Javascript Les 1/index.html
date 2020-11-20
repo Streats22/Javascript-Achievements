@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallo Javascript</title>
+</head>
+    <body>
+        <h1>Tijd met Javascript</h1>
+        <input type="button" value="kijk mij!" id="mijnButton"/>
+        <script>
+            let mijnButton = document.getElementById('mijnButton');
+            let datum = new Date();
+
+            mijnButton.addEventListener('click', ()=>{
+                window.alert(datum + "\nHallo Wereld, Mijn naam is Robin Schoenmaker ik ben 22 jaar en kom uit de buurt van alkmaar :)");
+            })
+            
+        </script>    
+    </body>
+
+</html>
