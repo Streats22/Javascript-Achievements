@@ -4,9 +4,9 @@ controls.enableMovement();
 
 // create a model
 const minecraftModel = new Model('assets/models/minecraft/scene.gltf');
-minecraftModel.setPosition(0, 1.54, -5);
-minecraftModel.setScale(0.1, 0.1, 0.1);
-minecraftModel.setRotation(0, -36.95, 0);
+minecraftModel.setPosition(0, 0.820, -5);
+minecraftModel.setScale(0.050, 0.050, 0.050);
+minecraftModel.setRotation(0, -14.921, 0);
 
 // create a primitive (sphere)
 const sphere = new Sphere();
@@ -21,7 +21,7 @@ testText.setFontsize(10);
 
 // create an image
 const image = new XRImage('assets/images/sampleImage.jpg');
-image.setPosition(-1.48819, 2.45839, -5);
+image.setPosition(-1.324, 2.135, -5.791);
 
 // create a 360 image
 const image360 = new Sky('assets/360_world.jpg');
@@ -32,3 +32,10 @@ spotLight.setTarget(minecraftModel);
 
 // listen for an event
 minecraftModel.addEventListener('click', () => console.log('je klikt op mij'));
+
+const cuberoom = new Model('assets/models/cube-room/cube-room.gltf');
+cuberoom.setPosition(-1.218, 0, -3.303);
+cuberoom.setScale(-.5, 0.5, 0.5);
+cuberoom.setRotation(-0.500, -0.500, -0.500);
+
+
