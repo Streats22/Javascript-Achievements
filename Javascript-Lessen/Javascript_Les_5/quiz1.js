@@ -3,7 +3,7 @@ const quiz1 =
     "quizID": "StreatsDesign Quiz",
     "quizMetaData":
     {
-        "title": "Lisser Art Museum",
+        "title": "LStreatsDesign Quiz",
         "imageURI": "https://streatsdesign.com/StreatsDesign_Logo.jpg"
 
     },

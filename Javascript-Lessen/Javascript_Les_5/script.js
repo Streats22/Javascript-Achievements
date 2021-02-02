@@ -12,7 +12,10 @@ let playerData = {}; // object, hierin worden de game gegevens opgeslagen
 let quizNummer = 1; // voorbereiden automatisch 2e quiz startem
 
 
+
+
 function init(){
+
   quiz = quiz1; // kies de quiz
   //  quiz = quiz2; // kies de quiz
   initQuiz(); // start de quiz

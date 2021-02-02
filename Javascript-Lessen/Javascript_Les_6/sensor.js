@@ -31,7 +31,7 @@ function showDataColor(alpha, beta, gamma){
 
     // change background color
      // gamma rotation left right rotation Y-axis
-    document.body.style.background = `rgb(150, ${Math.abs(gamma)*5}, 150)`;
+    document.body.style.background = `rgb(200, ${Math.abs(gamma)*5}, 50)`;
 }
 
 function activateVoice(alpha, beta, gamma){
