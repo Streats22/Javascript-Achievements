@@ -54,10 +54,10 @@ function showMyImage(alpha, beta, gamma){
     if(beta > 40){
         document.getElementById('myImage').src = "logo.jpg"; // show image
         }
-        elif(beta > -40 ){
+    elif(beta > -40);{
             document.getElementById('myImage').src = "StreatsDesign_Logo.jpg"
         }
-            else {
-            document.getElementById('myImage').src = ""; // no image
-        }
+    else{
+            document.getElementById('myImage').src = ""
+     }
 }

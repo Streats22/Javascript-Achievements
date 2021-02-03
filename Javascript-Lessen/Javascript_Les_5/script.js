@@ -14,15 +14,15 @@ let quizNummer = 1; // voorbereiden automatisch 2e quiz startem
 
 
 
-function init(){
+function init(choosenQuiz) {
 
-  quiz = quiz1; // kies de quiz
+  quiz = choosenQuiz; // kies de quiz
   //  quiz = quiz2; // kies de quiz
   initQuiz(); // start de quiz
 }
 
 
-function initQuiz(){
+function initQuiz() {
   questionBox.style.display = "block"; // reset alle player game variabelen
   resultBox.style.display = "none"; // reset alle player game variabelen
   counter = 0; // reset alle player game variabelen
@@ -30,14 +30,14 @@ function initQuiz(){
   playerData.wrongAnswers = 0; // reset alle player game variabelen
   playerName = ""; // toekomstige uitbreiding naam speler opvragen
   resultBox.style.display = "none"; // verberg de resultbox
-  quizTitle.innerHTML=quiz.quizMetaData.title; // laat titel van quiz zien
+  quizTitle.innerHTML = quiz.quizMetaData.title; // laat titel van quiz zien
   prepareQuestions(); // start de quiz
 }
 
 function prepareQuestions() {
   questionBox.className = "questionBox-new"; // voorbereiden animatie
   let quizImage = quiz.quizMetaData.imageURI; // image laden
-  quizWrapper.style.backgroundImage = "url("+ quizImage + ")"; // image laden
+  quizWrapper.style.backgroundImage = "url(" + quizImage + ")"; // image laden
   quizWrapper.style.backgroundRepeat = "no-repeat"; // image positioneren
   quizWrapper.style.backgroundPosition = "right"; // image positioneren
   quizWrapper.style.backgroundSize = "25%"; // image positioneren
@@ -46,7 +46,7 @@ function prepareQuestions() {
 
   if (counter < quiz.quizContent.length) { // test op aantal vragen
     myQuestion.innerHTML = quiz.quizContent[counter].question; // laat vraag zien
-    myAnswer.innerHTML = ""; 
+    myAnswer.innerHTML = "";
     // zet de multiple choice antwoorden neer
     for (let i = 0; i < quiz.quizContent[counter].answers.length; i++) {
       let answer = document.createElement('li');
@@ -57,16 +57,14 @@ function prepareQuestions() {
       answer.addEventListener('click', evaluate, true)
     }
 
-  } 
-  else 
-  {
+  } else {
     finishQuiz(); // sluit de quiz af
   }
 }
 
 function evaluate(evt) {
- // console.log(evt.target); // debug
-  if(!quiz.answerClicked){
+  // console.log(evt.target); // debug
+  if (!quiz.answerClicked) {
     if (evt.target.score) {
       evt.target.className = "right";
       playerData.goodAnswers += 1; // increase good score
@@ -76,30 +74,31 @@ function evaluate(evt) {
       playerData.wrongAnswers += 1; // increase wrong score
       console.log("wrong answer");
     }
-    quiz.answerClicked=true; // prevent double click
+    quiz.answerClicked = true; // prevent double click
   }
   counter++;
-  questionBox.className = "questionBox";  // voorbereiden animatie
+  questionBox.className = "questionBox"; // voorbereiden animatie
   setTimeout(prepareQuestions, delayTime); // wacht 2 seconden voor nieuwe vraag
 }
 
 
-}
+
 function finishQuiz() {
-questionBox.style.display = "none";
-result.style.display = "block";
-quizWrapper.style.background = "silver";
+  questionBox.style.display = "none";
+  resultBox.style.display = "block";
+  quizWrapper.style.background = "silver";
 
- let beloning;
+  let beloning;
 
-if (playerData.goodAnswwers >= 2 {
-  beloning = " Goed bezig!!"
-else {
-  beloning = "Hmm je zal toch meer moeten leren"
+  if (playerData.goodAnswwers >= 2) {
+    beloning = " Goed bezig!!"
+  } else {
+    beloning = "Hmm je zal toch meer moeten leren"
 
-resultBox.innerHTML = "<h2>Jouw resultaat <br>goede antwoorden " + playerData.goodAnswers + "<br>foute antwoorden " + playerData.wrongAnswers + "</h2>";
-document.getElementById('quizbutton').addEventListener("click", ()=>{
-  init(quiz2)
- })
+    resultBox.innerHTML = "<h2>Jouw resultaat <br>goede antwoorden " + playerData.goodAnswers + "<br>foute antwoorden " + playerData.wrongAnswers + "</h2>";
+    document.getElementById('quizbutton').addEventListener("click", () => {
+      init(quiz2)
+    })
+  }
 }
-
+init(quiz1);
