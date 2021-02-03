@@ -83,16 +83,23 @@ function evaluate(evt) {
   setTimeout(prepareQuestions, delayTime); // wacht 2 seconden voor nieuwe vraag
 }
 
+
+}
 function finishQuiz() {
-  // afsluiting quiz geef feedback
-  questionBox.style.display = "none";
-  resultBox.style.display = "block";
-  quizWrapper.style.background = "silver";
-  resultBox.innerHTML = "<h2>Jouw resultaat <br>goede antwoorden " + playerData.goodAnswers + "<br>foute antwoorden " + playerData.wrongAnswers + "</h2>";
+questionBox.style.display = "none";
+result.style.display = "block";
+quizWrapper.style.background = "silver";
+
+ let beloning;
+
+if (playerData.goodAnswwers >= 2 {
+  beloning = " Goed bezig!!"
+else {
+  beloning = "Hmm je zal toch meer moeten leren"
+
+resultBox.innerHTML = "<h2>Jouw resultaat <br>goede antwoorden " + playerData.goodAnswers + "<br>foute antwoorden " + playerData.wrongAnswers + "</h2>";
+document.getElementById('quizbutton').addEventListener("click", ()=>{
+  init(quiz2)
+ })
 }
-
-init(); {
-
-}
-
 
